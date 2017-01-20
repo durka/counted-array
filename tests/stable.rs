@@ -3,6 +3,7 @@
 
 use std::time::{SystemTime, UNIX_EPOCH};
 
+#[test]
 fn private_arrays() {
     counted_array!(const LOCAL_CONST_ARR: [i32; _] = [1, 2, 3]);
     counted_array!(let local_arr: [i32; _] = [4, 5, 6]);
@@ -16,6 +17,7 @@ fn private_arrays() {
 counted_array!(pub const CONST_ARR: [i32; _] = [1, 2, 3]);
 counted_array!(pub static STATIC_ARR: [i32; _] = [7, 8, 9, 10]);
 
+#[test]
 fn public_arrays() {
 
     assert_eq!(CONST_ARR, [1, 2, 3]);
@@ -40,6 +42,4 @@ fn lazy_static() {
 #[test] fn test_private_arrays() { private_arrays(); }
 #[test] fn test_public_arrays() { public_arrays(); }
 #[test] fn test_lazy_static() { lazy_static(); }
-
-fn main() {}
 

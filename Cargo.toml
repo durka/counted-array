@@ -10,13 +10,6 @@ readme = "README.md"
 license = "MIT"
 keywords = ["array", "length", "macro"]
 
-[[bin]]
-name = "test_stable"
-path = "tests/stable.rs"
-[[bin]]
-name = "test_nightly"
-path = "tests/nightly.rs"
-
 [dependencies]
 lazy_static = { version = "0.2", optional = true }
 
