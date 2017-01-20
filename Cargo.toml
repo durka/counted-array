@@ -1,9 +1,10 @@
 [package]
 name = "counted-array"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Alex Burka <aburka@seas.upenn.edu>"]
 
 description = "Macro for declaring fixed-size arrays without counting elements by hand. Supports lazy_static."
+categories = ["rust-patterns"]
 homepage = "https://github.com/durka/counted-array"
 repository = "https://github.com/durka/counted-array"
 readme = "README.md"
