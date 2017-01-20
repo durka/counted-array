@@ -32,7 +32,7 @@ macro_rules! counted_array {
     
     // output a local variable
     (@output $size:expr, $acc:tt (() let $n:ident $t:ty)) => {
-        counted_array!(@as_stmt let $n: [$t; $size] = $acc)
+        let $n: [$t; $size] = $acc;
     };
     // output a lazy static
     (@output $size:expr, $acc:tt (($($p:tt)*) lazy_static $n:ident $t:ty)) => {
@@ -40,12 +40,8 @@ macro_rules! counted_array {
     };
     // output a static or const item
     (@output $size:expr, $acc:tt (($($p:tt)*) $s:ident $n:ident $t:ty)) => {
-        counted_array!(@as_item $($p)* $s $n: [$t; $size] = $acc;);
+        $($p)* $s $n: [$t; $size] = $acc;
     };
-    
-    // screw you, lexer
-    (@as_stmt $s:stmt) => ($s);
-    (@as_item $i:item) => ($i);
     
     // EXTERNAL
     
