@@ -1,6 +1,6 @@
 [package]
 name = "counted-array"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Alex Burka <aburka@seas.upenn.edu>"]
 
 description = "Macro for declaring fixed-size arrays without counting elements by hand. Supports lazy_static."
