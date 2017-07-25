@@ -49,6 +49,9 @@ macro_rules! counted_array {
     (pub $storage:ident $n:ident: [$t:ty; _] = [$($vals:expr),* $(,)*]) => {
         counted_array!(@parse 0usize, ($($vals),*) -> [] ((pub) $storage $n $t));
     };
+    (pub $restr:tt $storage:ident $n:ident: [$t:ty; _] = [$($vals:expr),* $(,)*]) => {
+        counted_array!(@parse 0usize, ($($vals),*) -> [] ((pub $restr) $storage $n $t));
+    };
     ($storage:ident $n:ident: [$t:ty; _] = [$($vals:expr),* $(,)*]) => {
         counted_array!(@parse 0usize, ($($vals),*) -> [] (() $storage $n $t));
     };

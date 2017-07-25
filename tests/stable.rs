@@ -16,6 +16,7 @@ fn private_arrays() {
 
 counted_array!(pub const CONST_ARR: [i32; _] = [1, 2, 3]);
 counted_array!(pub static STATIC_ARR: [i32; _] = [7, 8, 9, 10]);
+counted_array!(pub(crate) static CRATE_ARR: [i32; _] = [11, 12, 13, 14, 15]);
 
 #[test]
 fn public_arrays() {
